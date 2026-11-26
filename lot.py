@@ -90,15 +90,20 @@ class BST:
             return 
         arr=[]
         cnt=0 #for counting visited nodes
+        level=0
         arr.append(rt)
         while cnt<len(arr):
-            temp=arr[cnt]
-            cnt+=1
-            print(temp.data,end=" ")
-            if temp.left:
-                arr.append(temp.left)
-            if temp.right:
-                arr.append(temp.right)
+            node_count = len(arr)-cnt  #no of nodes to be visited
+            print("\n Level: ", level, end=" ")
+            for i in range(node_count):
+                temp=arr[cnt]
+                cnt+=1
+                print(temp.data,end=" ")
+                if temp.left:
+                    arr.append(temp.left)
+                if temp.right:
+                    arr.append(temp.right)
+            level+=1
 
 
 
